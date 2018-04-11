@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- hibernate 连接数据库-->
+      <!--         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+               <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+               <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Bibased?serverTimezone=UTC</property>
+               <property name="hibernate.connection.username">root</property>
+               <property name="hibernate.connection.password">root</property>
+
+               <property name="show_sql">true</property>
+-->
+        <!-- 自动创建|更新|验证数据库表结 -->
+        <!--
+        update：
+    第一次加载hibernate时根据model类会自动建立起表的结构（前提是先建立好数据库），
+    以后加载hibernate时根据 model类自动更新表结构 -->
+   <!--   <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+        <property name="current_session_context_class">thread</property>
+-->
+        <!-- 加入实体类 -->
+        <!--
+        <mapping clacompanyinfo.Companyinfoinfo"/>
+        -->
+        <mapping class="com.lzp.app1.dao.Bibased"/>
+        <mapping class="com.lzp.app1.dao.Message_board"/>
+        <mapping class="com.lzp.app1.dao.Notice"/>
+        <mapping class="com.lzp.app1.dao.User"/>
+
+            <!-- Hibernate3's Config -->
+            <!--<property name="cache.use_second_level_cache">true</property>-->
+            <!--<property name="cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property>-->
+
+
+    </session-factory>
+</hibernate-configuration>
